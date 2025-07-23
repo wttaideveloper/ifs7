@@ -45,13 +45,22 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              {/* IFS7 Logo - Replace with actual logo */}
-              <div className="w-10 h-10 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md">
+              <img 
+                src="/ifs7-logo.jpeg" 
+                alt="IFS7 Logo" 
+                className="w-10 h-10 rounded-lg object-cover shadow-md"
+                onError={(e) => {
+                  // Fallback to styled placeholder if image fails to load
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-10 h-10 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md" style={{display: 'none'}}>
                 <span className="text-white font-bold text-sm">IFS7</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-slate-800">IBLU</h1>
-                <p className="text-xs text-slate-500">by WhiteIfs7</p>
+                <h1 className="text-xl font-bold text-slate-800">IFS7</h1>
+                <p className="text-xs text-slate-500">IBLU by WhiteIfs7</p>
               </div>
             </div>
             
@@ -523,13 +532,22 @@ export default function Home() {
           <div className="text-center">
             {/* Logo and description */}
             <div className="flex items-center justify-center space-x-3 mb-6">
-              {/* IFS7 Logo - Replace with actual logo */}
-              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md">
+              <img 
+                src="/ifs7-logo.jpeg" 
+                alt="IFS7 Logo" 
+                className="w-12 h-12 rounded-lg object-cover shadow-md"
+                onError={(e) => {
+                  // Fallback to styled placeholder if image fails to load
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md" style={{display: 'none'}}>
                 <span className="text-white font-bold">IFS7</span>
               </div>
               <div className="text-left">
-                <h3 className="text-xl font-bold">IBLU</h3>
-                <p className="text-slate-400 text-sm">Interactive Bible Learning University</p>
+                <h3 className="text-xl font-bold">IFS7</h3>
+                <p className="text-slate-400 text-sm">IBLU - Interactive Bible Learning University</p>
               </div>
             </div>
             
