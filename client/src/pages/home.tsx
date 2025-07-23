@@ -45,12 +45,13 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center">
-                <GraduationCap className="text-white" size={20} />
+              {/* IFS7 Logo - Replace with actual logo */}
+              <div className="w-10 h-10 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-sm">IFS7</span>
               </div>
               <div>
                 <h1 className="text-xl font-bold text-slate-800">IBLU</h1>
-                <p className="text-xs text-slate-500">Bible Learning Platform</p>
+                <p className="text-xs text-slate-500">by WhiteIfs7</p>
               </div>
             </div>
             
@@ -522,8 +523,9 @@ export default function Home() {
           <div className="text-center">
             {/* Logo and description */}
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center">
-                <GraduationCap className="text-white" size={24} />
+              {/* IFS7 Logo - Replace with actual logo */}
+              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-lg flex items-center justify-center shadow-md">
+                <span className="text-white font-bold">IFS7</span>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-bold">IBLU</h3>
