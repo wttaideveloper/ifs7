@@ -52,7 +52,6 @@ export default function Home() {
               />
               <div>
                 <h1 className="text-2xl font-bold text-slate-800">IFS7</h1>
-                <p className="text-sm text-slate-500">IBLU by WhiteIfs7</p>
               </div>
             </div>
             
@@ -531,7 +530,6 @@ export default function Home() {
               />
               <div className="text-left">
                 <h3 className="text-2xl font-bold">IFS7</h3>
-                <p className="text-slate-400 text-base">IBLU - Interactive Bible Learning University</p>
               </div>
             </div>
             
