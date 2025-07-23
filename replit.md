@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application for IBLU (Interactive Bible Learning University), a revolutionary digital Bible learning platform. The application features a React frontend with TypeScript, Express.js backend, and is configured to use PostgreSQL with Drizzle ORM for data persistence. The UI is built with shadcn/ui components and styled with Tailwind CSS.
+This is a landing page for IBLU (Interactive Bible Learning University), designed to drive crowdfunding donations through the WhiteIfs7 platform. The application features a React frontend with TypeScript and Express.js backend using in-memory storage. The design matches the WhiteIfs7 website style with modern animations and clean layouts. The UI is built with shadcn/ui components and styled with Tailwind CSS.
 
 ## User Preferences
 
@@ -34,11 +34,11 @@ Preferred communication style: Simple, everyday language.
 
 ## Key Components
 
-### Database Layer
-- **ORM**: Drizzle ORM with PostgreSQL
-- **Schema Location**: `shared/schema.ts`
-- **Migrations**: Managed via drizzle-kit in `migrations/` directory
-- **Current Schema**: Basic user table with id, username, and password fields
+### Storage Layer
+- **Type**: In-memory storage for development
+- **Interface**: IStorage in `server/storage.ts`
+- **Implementation**: MemStorage class with basic user CRUD operations
+- **Schema**: Basic user table structure maintained for future expansion
 
 ### API Layer
 - **Base Path**: All API routes prefixed with `/api`
@@ -51,10 +51,11 @@ Preferred communication style: Simple, everyday language.
 - **Responsive Design**: Mobile-first approach with Tailwind breakpoints
 - **Animation System**: Framer Motion integration for page transitions
 
-### Authentication & Session Management
-- **Session Storage**: PostgreSQL-backed sessions via connect-pg-simple
-- **User Model**: Basic username/password authentication ready
-- **Validation**: Zod schemas for type-safe data validation
+### Landing Page Features
+- **Hero Section**: Faith meets innovation messaging with development status
+- **Feature Cards**: Sections for children, adults, and technology highlights
+- **Support Section**: Crowdfunding call-to-action with progress indicators
+- **WhiteIfs7 Integration**: Links to donation and support pages on WhiteIfs7 platform
 
 ## Data Flow
 
@@ -89,7 +90,8 @@ Preferred communication style: Simple, everyday language.
 ### Environment Configuration
 - **Development**: Separate Vite dev server with Express API server
 - **Production**: Express serves static files and API from single process
-- **Database**: Environment variable `DATABASE_URL` for PostgreSQL connection
+- **Storage**: In-memory storage, no database connection required
+- **External Links**: Configured to redirect to WhiteIfs7 platform for donations
 
 ### Scripts
 - `npm run dev` - Development mode with hot reloading
@@ -97,4 +99,15 @@ Preferred communication style: Simple, everyday language.
 - `npm run start` - Production server
 - `npm run db:push` - Push database schema changes
 
-The application is designed as a modern, scalable web platform ready for educational content delivery with a focus on Bible learning and interactive features.
+The application is designed as a modern landing page to showcase IBLU's vision and drive crowdfunding support through clean design, engaging animations, and clear calls-to-action that redirect to the WhiteIfs7 donation platform.
+
+## Recent Changes
+
+### July 23, 2025
+- Created IBLU landing page matching WhiteIfs7 design style
+- Implemented hero section with "Faith Meets Innovation" messaging
+- Added feature cards for different age groups (children, adults, technology)
+- Built support section with development progress indicators
+- Integrated WhiteIfs7 donation links and platform branding
+- Configured responsive design with modern animations using Framer Motion
+- Simplified backend to use in-memory storage, removed database dependencies
