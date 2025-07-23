@@ -44,15 +44,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center">
               <img 
                 src="/ifs7-logo.jpeg" 
                 alt="IFS7 Logo" 
                 className="w-16 h-16 rounded-lg object-cover shadow-md"
               />
-              <div>
-                <h1 className="text-2xl font-bold text-slate-800">IFS7</h1>
-              </div>
             </div>
             
             {/* Navigation Links */}
@@ -521,16 +518,13 @@ export default function Home() {
       <footer className="bg-slate-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Logo and description */}
-            <div className="flex items-center justify-center space-x-4 mb-6">
+            {/* Logo */}
+            <div className="flex items-center justify-center mb-6">
               <img 
                 src="/ifs7-logo.jpeg" 
                 alt="IFS7 Logo" 
                 className="w-16 h-16 rounded-lg object-cover shadow-md"
               />
-              <div className="text-left">
-                <h3 className="text-2xl font-bold">IFS7</h3>
-              </div>
             </div>
             
             <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
