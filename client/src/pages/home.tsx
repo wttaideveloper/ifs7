@@ -21,7 +21,8 @@ import {
   BookOpen,
   Construction,
   AlertCircle,
-  Pencil
+  Pencil,
+  ChevronRight
 } from "lucide-react";
 
 export default function Home() {
