@@ -18,7 +18,10 @@ import {
   Code,
   CheckCircle,
   Handshake,
-  BookOpen
+  BookOpen,
+  Construction,
+  AlertCircle,
+  Pencil
 } from "lucide-react";
 
 export default function Home() {
@@ -297,80 +300,82 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Feature Cards Grid */}
+          {/* Development Status Section */}
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            variants={stagger}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+            variants={fadeInUp}
+            className="mb-16"
           >
-            
-            {/* Card 1: For Children */}
-            <motion.div variants={fadeInUp}>
-              <Card className="card-hover h-full">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    {/* Children learning illustration placeholder */}
-                    <div className="rounded-xl w-full h-48 bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center">
-                      <Baby size={48} className="text-[hsl(38,92%,50%)]" />
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl p-16 shadow-2xl border-2 border-dashed border-slate-300 relative overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-10 left-10 w-32 h-32 bg-[hsl(234,89%,60%)] rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-10 right-10 w-40 h-40 bg-[hsl(273,75%,66%)] rounded-full blur-2xl"></div>
+                </div>
+                
+                {/* Construction icon */}
+                <div className="w-24 h-24 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                  <Construction className="text-white" size={40} />
+                </div>
+                
+                <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+                  Development Status
+                </h2>
+                
+                <div className="inline-flex items-center bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 text-white px-8 py-4 rounded-full text-xl font-bold mb-8 shadow-lg">
+                  <AlertCircle size={20} className="mr-3" />
+                  Currently Under Development
+                </div>
+                
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                  IBLU is actively being developed by our dedicated team at Interactive Faith Solutions. 
+                  We're working hard to bring you this revolutionary Bible learning platform.
+                </p>
+                
+                {/* Progress indicators */}
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="p-6 bg-white rounded-2xl shadow-md">
+                    <div className="w-12 h-12 bg-[hsl(234,89%,60%)] rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Pencil className="text-white" size={20} />
                     </div>
-                  </div>
-                  <div className="w-12 h-12 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center mb-4">
-                    <Baby className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">For Young Learners</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Colorful animations, interactive stories, and age-appropriate content that makes Bible learning 
-                    an exciting adventure for children.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            
-            {/* Card 2: For Adults */}
-            <motion.div variants={fadeInUp}>
-              <Card className="card-hover h-full">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    {/* Virtual education platform illustration placeholder */}
-                    <div className="rounded-xl w-full h-48 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
-                      <University size={48} className="text-[hsl(234,89%,60%)]" />
+                    <h4 className="font-bold text-slate-800 mb-2">Planning Phase</h4>
+                    <div className="w-full bg-slate-200 rounded-full h-2">
+                      <div className="bg-[hsl(234,89%,60%)] h-2 rounded-full w-full"></div>
                     </div>
+                    <p className="text-sm text-slate-600 mt-2">Complete</p>
                   </div>
-                  <div className="w-12 h-12 bg-[hsl(158,64%,52%)] rounded-full flex items-center justify-center mb-4">
-                    <University className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">For Adult Learners</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Deep theological content, study tools, and adaptive learning paths that grow with your 
-                    understanding and spiritual journey.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            
-            {/* Card 3: Technology */}
-            <motion.div variants={fadeInUp} className="md:col-span-2 lg:col-span-1">
-              <Card className="card-hover h-full">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    {/* Theological study materials illustration placeholder */}
-                    <div className="rounded-xl w-full h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                      <Microchip size={48} className="text-[hsl(273,75%,66%)]" />
+                  
+                  <div className="p-6 bg-white rounded-2xl shadow-md">
+                    <div className="w-12 h-12 bg-[hsl(38,92%,50%)] rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Code className="text-white" size={20} />
                     </div>
+                    <h4 className="font-bold text-slate-800 mb-2">Development</h4>
+                    <div className="w-full bg-slate-200 rounded-full h-2">
+                      <div className="bg-[hsl(38,92%,50%)] h-2 rounded-full w-3/4"></div>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">In Progress</p>
                   </div>
-                  <div className="w-12 h-12 bg-[hsl(38,92%,50%)] rounded-full flex items-center justify-center mb-4">
-                    <Microchip className="text-white" size={24} />
+                  
+                  <div className="p-6 bg-white rounded-2xl shadow-md">
+                    <div className="w-12 h-12 bg-slate-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Rocket className="text-white" size={20} />
+                    </div>
+                    <h4 className="font-bold text-slate-800 mb-2">Launch</h4>
+                    <div className="w-full bg-slate-200 rounded-full h-2">
+                      <div className="bg-slate-400 h-2 rounded-full w-1/4"></div>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">Coming Soon</p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">Smart Technology</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    AI-powered adaptive learning, progress tracking, and personalized content delivery 
-                    that adjusts to each learner's pace and style.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+                
+                <p className="text-lg text-slate-600">
+                  Your support through <strong>WhiteIfs7</strong> helps fund this important project and brings us closer to launch.
+                </p>
+              </div>
+            </div>
           </motion.div>
           
           {/* Key Features List */}
