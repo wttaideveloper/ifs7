@@ -469,18 +469,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">Prefer One-Time Giving?</h3>
                 <p className="text-lg text-slate-600 mb-8">Make a single contribution to support our mission</p>
                 
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$25</div>
-                    <p className="text-slate-600 text-sm">Support one child's learning module</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 transform scale-105 cursor-pointer">
-                    <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$75</div>
-                    <p className="text-slate-600 text-sm">Fund interactive Bible story</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <div className="text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
-                    <p className="text-slate-600 text-sm">Major development milestone</p>
+                <div className="flex justify-center mb-6">
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-sm">
+                    <div className="text-4xl font-bold text-[hsl(158,64%,52%)] mb-3">$1500</div>
+                    <p className="text-slate-600 text-base">Major development milestone</p>
                   </div>
                 </div>
                 
