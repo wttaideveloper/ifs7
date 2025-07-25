@@ -197,12 +197,33 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-6">
-              Revolutionizing Bible Education
+              WHAT WE DO: The IFS Mission
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              From children exploring their first Bible stories to adults deepening their theological understanding, 
-              IBLU makes learning fun, convenient, and fruitful for everyone.
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Interactive Faith Solutions LLC (IFS) is a faith-motivated educational technology company dedicated to revolutionizing how people and families interact with Scripture through immersive, interactive, and customized learning experiences based on biblical truth.
             </p>
+            
+            <div className="bg-gradient-to-r from-[hsl(234,100%,96%)] to-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-800 mb-6">We design tools that:</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-left">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-slate-700">Animate the stories of the Bible</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-slate-700">Personalize learning for kids and adults</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-slate-700">Use gamification to inspire daily study</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-slate-700">Build community among believers</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
           
           {/* Feature Cards Grid */}
