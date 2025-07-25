@@ -429,38 +429,27 @@ export default function Home() {
               </p>
               
               {/* Impact showcase */}
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
                 <motion.div
                   variants={fadeInUp}
-                  className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
+                  className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-[hsl(234,89%,60%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Baby className="text-white" size={28} />
+                  <div className="w-20 h-20 bg-[hsl(234,89%,60%)] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Baby className="text-white" size={32} />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">Transform Children's Lives</h4>
-                  <p className="text-slate-600">Interactive stories that make Bible learning an exciting adventure</p>
+                  <h4 className="text-2xl font-bold text-slate-800 mb-3">Transform Children's Lives</h4>
+                  <p className="text-slate-600 text-lg">Interactive stories that make Bible learning an exciting adventure</p>
                 </motion.div>
                 
                 <motion.div
                   variants={fadeInUp}
-                  className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
+                  className="p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <University className="text-white" size={28} />
+                  <div className="w-20 h-20 bg-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <University className="text-white" size={32} />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">Empower Adult Learning</h4>
-                  <p className="text-slate-600">Deep theological content that grows with your spiritual journey</p>
-                </motion.div>
-                
-                <motion.div
-                  variants={fadeInUp}
-                  className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-[hsl(158,64%,52%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Users className="text-white" size={28} />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-2">Build Global Community</h4>
-                  <p className="text-slate-600">Connect believers worldwide through shared learning experiences</p>
+                  <h4 className="text-2xl font-bold text-slate-800 mb-3">Empower Adult Learning</h4>
+                  <p className="text-slate-600 text-lg">Deep theological content that grows with your spiritual journey</p>
                 </motion.div>
               </div>
               
