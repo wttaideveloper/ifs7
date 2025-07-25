@@ -404,16 +404,16 @@ export default function Home() {
             
             {/* Links */}
             <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <a href="https://whiteifs7.com" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                Visit WhiteIfs7
+              <a href="https://ifs7.com" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                Visit IFS7.com
               </a>
-              <a href="https://whiteifs7.com/about" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/about" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 About Us
               </a>
-              <a href="https://whiteifs7.com/contact" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/contact" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 Contact
               </a>
-              <a href="https://whiteifs7.com/privacy" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/privacy" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 Privacy
               </a>
             </div>
@@ -422,7 +422,7 @@ export default function Home() {
             <div className="border-t border-slate-700 pt-8">
               <p className="text-slate-400 text-sm">
                 © 2024 IBLU - Interactive Bible Learning University. 
-                A project of <a href="https://whiteifs7.com" className="text-[hsl(234,89%,60%)] hover:underline" target="_blank" rel="noopener noreferrer">WhiteIfs7</a>. 
+                A project of <a href="https://ifs7.com" className="text-[hsl(234,89%,60%)] hover:underline" target="_blank" rel="noopener noreferrer">IFS7.com</a>. 
                 All rights reserved.
               </p>
             </div>

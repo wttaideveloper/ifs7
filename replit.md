@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a landing page for IBLU (Interactive Bible Learning University), designed to drive crowdfunding donations through the WhiteIfs7 platform. The application features a React frontend with TypeScript and Express.js backend using in-memory storage. The design matches the WhiteIfs7 website style with modern animations and clean layouts. The UI is built with shadcn/ui components and styled with Tailwind CSS.
+This is a landing page for IBLU (Interactive Bible Learning University), designed to drive crowdfunding donations through the IFS7.com platform. The application features a React frontend with TypeScript and Express.js backend using in-memory storage. The design matches the IFS7.com website style with modern animations and clean layouts. The UI is built with shadcn/ui components and styled with Tailwind CSS.
 
 ## User Preferences
 
@@ -91,7 +91,7 @@ Preferred communication style: Simple, everyday language.
 - **Development**: Separate Vite dev server with Express API server
 - **Production**: Express serves static files and API from single process
 - **Storage**: In-memory storage, no database connection required
-- **External Links**: Configured to redirect to WhiteIfs7 platform for donations
+- **External Links**: Configured to redirect to IFS7.com platform for donations
 
 ### Scripts
 - `npm run dev` - Development mode with hot reloading
@@ -99,15 +99,15 @@ Preferred communication style: Simple, everyday language.
 - `npm run start` - Production server
 - `npm run db:push` - Push database schema changes
 
-The application is designed as a modern landing page to showcase IBLU's vision and drive crowdfunding support through clean design, engaging animations, and clear calls-to-action that redirect to the WhiteIfs7 donation platform.
+The application is designed as a modern landing page to showcase IBLU's vision and drive crowdfunding support through clean design, engaging animations, and clear calls-to-action that redirect to the IFS7.com donation platform.
 
 ## Recent Changes
 
 ### July 23, 2025
-- Created IBLU landing page matching WhiteIfs7 design style
+- Created IBLU landing page matching IFS7.com design style
 - Implemented hero section with "Faith Meets Innovation" messaging
 - Added feature cards for different age groups (children, adults, technology)
 - Built support section with development progress indicators
-- Integrated WhiteIfs7 donation links and platform branding
+- Integrated IFS7.com donation links and platform branding
 - Configured responsive design with modern animations using Framer Motion
 - Simplified backend to use in-memory storage, removed database dependencies
