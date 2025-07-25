@@ -52,7 +52,7 @@ export default function Home() {
               <img 
                 src="/ifs-logo.png" 
                 alt="IFS Interactive Faith Solutions Logo" 
-                className="w-14 h-14 md:w-20 md:h-20 rounded-lg object-contain shadow-md"
+                className="w-14 h-14 md:w-20 md:h-20 object-contain"
               />
             </div>
             
@@ -549,7 +549,7 @@ export default function Home() {
               <img 
                 src="/ifs-logo.png" 
                 alt="IFS Interactive Faith Solutions Logo" 
-                className="w-20 h-20 rounded-lg object-contain shadow-md"
+                className="w-20 h-20 object-contain"
               />
             </div>
             
