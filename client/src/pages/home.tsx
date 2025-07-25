@@ -378,61 +378,7 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Key Features List */}
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <Card className="shadow-xl">
-              <CardContent className="p-8 lg:p-12">
-                <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center">Platform Highlights</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Play className="text-white" size={14} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Interactive Animations</h4>
-                      <p className="text-slate-600 text-sm">Bringing Bible stories to life with engaging visual storytelling</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-[hsl(158,64%,52%)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Brain className="text-white" size={14} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Adaptive Learning</h4>
-                      <p className="text-slate-600 text-sm">Content that adapts to your learning style and progress</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-[hsl(38,92%,50%)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Users className="text-white" size={14} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">All Ages Welcome</h4>
-                      <p className="text-slate-600 text-sm">Designed for learners from early childhood to senior adults</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Cross className="text-white" size={14} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Christ-Centered</h4>
-                      <p className="text-slate-600 text-sm">Every lesson grounded in biblical truth and Christian values</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+
         </div>
       </section>
 
