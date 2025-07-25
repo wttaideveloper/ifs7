@@ -309,9 +309,9 @@ export default function Home() {
             className="mb-16"
           >
             <div className="max-w-4xl mx-auto text-center">
-              <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl p-16 shadow-2xl border-2 border-dashed border-slate-300 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl p-16 shadow-2xl border-2 border-dashed border-slate-300 relative overflow-hidden" style={{userSelect: 'text'}}>
                 {/* Background pattern */}
-                <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0 opacity-5 pointer-events-none" style={{userSelect: 'none'}}>
                   <div className="absolute top-10 left-10 w-32 h-32 bg-[hsl(234,89%,60%)] rounded-full blur-2xl"></div>
                   <div className="absolute bottom-10 right-10 w-40 h-40 bg-[hsl(273,75%,66%)] rounded-full blur-2xl"></div>
                 </div>
