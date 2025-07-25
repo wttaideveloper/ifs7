@@ -146,10 +146,12 @@ export default function Home() {
               className="animate-fade-in text-center lg:text-left"
             >
               {/* Status Badge */}
-              <Badge className="status-badge text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 inline-flex items-center space-x-1 sm:space-x-2">
-                <Code size={14} className="sm:w-4 sm:h-4" />
-                <span className="whitespace-nowrap">Currently Under Development</span>
-              </Badge>
+              <div className="flex justify-center lg:justify-start mb-4 sm:mb-6">
+                <Badge className="status-badge text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold inline-flex items-center space-x-1 sm:space-x-2">
+                  <Code size={14} className="sm:w-4 sm:h-4" />
+                  <span className="whitespace-nowrap">Currently Under Development</span>
+                </Badge>
+              </div>
               
               {/* Main Headline */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-800 leading-tight mb-4 sm:mb-6">
