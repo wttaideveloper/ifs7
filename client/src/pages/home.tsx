@@ -194,33 +194,95 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-6">
-              WHAT WE DO: The IFS Mission
+            {/* Badge */}
+            <div className="inline-flex items-center bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+              <Cross size={16} className="mr-2" />
+              Our Mission
+            </div>
+            
+            <h2 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-8 leading-tight">
+              WHAT WE DO: <br />
+              <span className="bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] bg-clip-text text-transparent">
+                The IFS Mission
+              </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            
+            <p className="text-2xl text-slate-600 max-w-5xl mx-auto leading-relaxed mb-12 font-light">
               Interactive Faith Solutions LLC (IFS) is a faith-motivated educational technology company dedicated to revolutionizing how people and families interact with Scripture through immersive, interactive, and customized learning experiences based on biblical truth.
             </p>
             
-            <div className="bg-gradient-to-r from-[hsl(234,100%,96%)] to-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">We design tools that:</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-left">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg text-slate-700">Animate the stories of the Bible</p>
+            {/* Mission Cards */}
+            <div className="relative max-w-6xl mx-auto">
+              {/* Background decorative elements */}
+              <div className="absolute inset-0 -z-10">
+                <div className="absolute top-0 left-0 w-72 h-72 bg-[hsl(234,89%,60%)] opacity-5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-[hsl(273,75%,66%)] opacity-5 rounded-full blur-3xl"></div>
+              </div>
+              
+              <div className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100">
+                <div className="flex items-center justify-center mb-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center shadow-lg">
+                    <Microchip className="text-white" size={32} />
+                  </div>
+                  <div className="ml-6">
+                    <h3 className="text-3xl font-bold text-slate-800">We design tools that:</h3>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg text-slate-700">Personalize learning for kids and adults</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg text-slate-700">Use gamification to inspire daily study</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[hsl(234,89%,60%)] rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg text-slate-700">Build community among believers</p>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <motion.div
+                    variants={fadeInUp}
+                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(234,89%,60%)] to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Play className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-slate-800 mb-2">Animate Biblical Stories</h4>
+                      <p className="text-slate-600 leading-relaxed">Bringing Scripture to life through engaging animations and interactive storytelling</p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    variants={fadeInUp}
+                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(273,75%,66%)] to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Users className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-slate-800 mb-2">Personalized Learning</h4>
+                      <p className="text-slate-600 leading-relaxed">Customized experiences that adapt to each learner's age, pace, and understanding</p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    variants={fadeInUp}
+                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(158,64%,52%)] to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Rocket className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-slate-800 mb-2">Gamified Study</h4>
+                      <p className="text-slate-600 leading-relaxed">Making daily Bible study engaging and rewarding through interactive challenges</p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    variants={fadeInUp}
+                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Heart className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-slate-800 mb-2">Community Building</h4>
+                      <p className="text-slate-600 leading-relaxed">Connecting believers worldwide through shared learning and spiritual growth</p>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
