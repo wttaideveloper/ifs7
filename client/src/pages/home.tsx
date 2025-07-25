@@ -155,13 +155,13 @@ export default function Home() {
               <div className="relative">
                 {/* Main illustration container */}
                 <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                  {/* Bible learning children illustration placeholder */}
-                  <div className="rounded-2xl w-full h-80 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center shadow-lg">
-                    <div className="text-center text-slate-600">
-                      <BookOpen size={64} className="mx-auto mb-4 text-[hsl(234,89%,60%)]" />
-                      <p className="text-lg font-semibold">Children Learning Bible Stories</p>
-                      <p className="text-sm">Interactive & Engaging Content</p>
-                    </div>
+                  {/* Bible learning children illustration */}
+                  <div className="rounded-2xl w-full h-80 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center shadow-lg overflow-hidden">
+                    <img 
+                      src="/hero-image.png" 
+                      alt="Children learning Bible stories with lion character" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   
                   {/* Floating elements */}
