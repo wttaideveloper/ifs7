@@ -58,11 +58,37 @@
 @layer base {
   * {
     @apply border-border;
+    /* Ensure text selection is enabled */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    /* Enable text selection on body */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Specifically enable selection for all text elements */
+  p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Only disable selection for interactive elements where it makes sense */
+  button, input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 
