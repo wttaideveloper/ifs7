@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useState } from "react";
 import { 
   GraduationCap, 
   Heart, 
@@ -22,10 +23,14 @@ import {
   Construction,
   AlertCircle,
   Pencil,
-  ChevronRight
+  ChevronRight,
+  Menu,
+  X
 } from "lucide-react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -45,106 +50,156 @@ export default function Home() {
     <div className="min-h-screen bg-white text-slate-800 overflow-x-hidden">
       {/* Navigation */}
       <nav className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center flex-shrink-0">
               <img 
                 src="/ifs-logo.png" 
                 alt="IFS Interactive Faith Solutions Logo" 
-                className="w-14 h-14 md:w-20 md:h-20 object-contain"
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 object-contain"
               />
             </div>
             
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#hero" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Home</a>
-              <a href="#platform" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Our Mission</a>
-              <a href="#contribute" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Donate</a>
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+              <a href="#hero" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Home</a>
+              <a href="#platform" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Our Mission</a>
+              <a href="#contribute" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Donate</a>
             </div>
             
-            {/* CTA Button */}
-            <Button 
-              asChild
-              className="btn-primary text-white px-4 py-2 md:px-6 md:py-2 rounded-full font-semibold text-xs md:text-sm"
-            >
-              <a href="#contribute" className="flex items-center space-x-1 md:space-x-2">
-                <Heart size={14} className="md:w-4 md:h-4" />
-                <span className="hidden sm:inline">Support IBLU</span>
-                <span className="sm:hidden">Donate</span>
-              </a>
-            </Button>
+            {/* Desktop CTA Button */}
+            <div className="hidden md:flex">
+              <Button 
+                asChild
+                className="btn-primary text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full font-semibold text-xs lg:text-sm"
+              >
+                <a href="#contribute" className="flex items-center space-x-2">
+                  <Heart size={14} className="lg:w-4 lg:h-4" />
+                  <span>Support IBLU</span>
+                </a>
+              </Button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center space-x-2">
+              <Button 
+                asChild
+                className="btn-primary text-white px-3 py-2 rounded-full font-semibold text-xs"
+              >
+                <a href="#contribute" className="flex items-center space-x-1">
+                  <Heart size={12} />
+                  <span>Donate</span>
+                </a>
+              </Button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors p-2"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-sm">
+              <div className="py-3 space-y-1">
+                <a 
+                  href="#hero" 
+                  className="block px-4 py-3 text-slate-600 hover:text-[hsl(234,89%,60%)] hover:bg-slate-50 transition-colors font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <a 
+                  href="#platform" 
+                  className="block px-4 py-3 text-slate-600 hover:text-[hsl(234,89%,60%)] hover:bg-slate-50 transition-colors font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Our Mission
+                </a>
+                <a 
+                  href="#contribute" 
+                  className="block px-4 py-3 text-slate-600 hover:text-[hsl(234,89%,60%)] hover:bg-slate-50 transition-colors font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Donate
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-gradient min-h-screen flex items-center py-20" id="hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="hero-gradient min-h-screen flex items-center py-12 sm:py-16 lg:py-20" id="hero">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Left Content */}
             <motion.div
               initial="initial"
               animate="animate"
               variants={fadeInUp}
-              className="animate-fade-in"
+              className="animate-fade-in text-center lg:text-left"
             >
               {/* Status Badge */}
-              <Badge className="status-badge text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 inline-flex items-center space-x-2">
-                <Code size={16} />
-                <span>Currently Under Development</span>
+              <Badge className="status-badge text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 inline-flex items-center space-x-1 sm:space-x-2">
+                <Code size={14} className="sm:w-4 sm:h-4" />
+                <span className="whitespace-nowrap">Currently Under Development</span>
               </Badge>
               
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
-                Faith Meets
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-800 leading-tight mb-4 sm:mb-6">
+                <span className="block">Faith Meets</span>
                 <span className="block">Innovation.</span>
                 <span className="text-[hsl(234,89%,60%)] block">Learning the Bible</span>
                 <span className="block">Will Never Be the Same.</span>
               </h1>
               
               {/* Description */}
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 IBLU is a revolutionary digital Bible learning platform powered by animation, adaptive technology, and Christ-centered teaching—for every age and stage.
               </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
                 <Button 
                   asChild
-                  className="btn-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg w-full sm:min-w-48 sm:w-auto"
+                  className="btn-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg w-full sm:w-auto sm:min-w-48"
                 >
                   <a href="#contribute" className="flex items-center justify-center space-x-2">
-                    <Rocket size={18} className="sm:w-5 sm:h-5" />
+                    <Rocket size={16} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                     <span>Support the Vision</span>
                   </a>
                 </Button>
                 <Button 
                   variant="outline"
                   asChild
-                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 w-full sm:min-w-48 sm:w-auto"
+                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 w-full sm:w-auto sm:min-w-48"
                 >
-                  <a href="#learn-more" className="flex items-center justify-center space-x-2">
-                    <PlayCircle size={18} className="sm:w-5 sm:h-5" />
+                  <a href="#platform" className="flex items-center justify-center space-x-2">
+                    <PlayCircle size={16} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                     <span>Learn How It Works</span>
                   </a>
                 </Button>
               </div>
               
               {/* Statistics */}
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-slate-200">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">Kids to Adults</div>
-                  <div className="text-sm text-slate-500">Every Age</div>
+                  <div className="text-sm sm:text-lg lg:text-2xl font-bold text-[hsl(234,89%,60%)]">Kids to Adults</div>
+                  <div className="text-xs sm:text-sm text-slate-500">Every Age</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">Interactive</div>
-                  <div className="text-sm text-slate-500">Learning</div>
+                  <div className="text-sm sm:text-lg lg:text-2xl font-bold text-[hsl(234,89%,60%)]">Interactive</div>
+                  <div className="text-xs sm:text-sm text-slate-500">Learning</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">Adaptive</div>
-                  <div className="text-sm text-slate-500">Technology</div>
+                  <div className="text-sm sm:text-lg lg:text-2xl font-bold text-[hsl(234,89%,60%)]">Adaptive</div>
+                  <div className="text-xs sm:text-sm text-slate-500">Technology</div>
                 </div>
               </div>
             </motion.div>
@@ -154,13 +209,13 @@ export default function Home() {
               initial="initial"
               animate="animate"
               variants={fadeInUp}
-              className="animate-slide-up"
+              className="animate-slide-up mt-8 lg:mt-0"
             >
               <div className="relative">
                 {/* Main illustration container */}
-                <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="relative bg-white rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl p-4 sm:p-6 lg:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500">
                   {/* Bible learning children illustration */}
-                  <div className="rounded-2xl w-full h-80 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center shadow-lg overflow-hidden">
+                  <div className="rounded-xl lg:rounded-2xl w-full h-48 sm:h-64 lg:h-80 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center shadow-lg overflow-hidden">
                     <img 
                       src="/hero-image.png" 
                       alt="Children learning Bible stories with lion character" 
@@ -168,19 +223,19 @@ export default function Home() {
                     />
                   </div>
                   
-                  {/* Floating elements */}
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center animate-bounce-gentle">
-                    <BookOpen className="text-white" size={24} />
+                  {/* Floating elements - responsive */}
+                  <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-[hsl(234,89%,60%)] rounded-full flex items-center justify-center animate-bounce-gentle">
+                    <BookOpen className="text-white" size={16} />
                   </div>
-                  <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[hsl(158,64%,52%)] rounded-full flex items-center justify-center animate-pulse-slow">
-                    <Heart className="text-white" size={18} />
+                  <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[hsl(158,64%,52%)] rounded-full flex items-center justify-center animate-pulse-slow">
+                    <Heart className="text-white w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                   </div>
                 </div>
                 
-                {/* Background decorative elements */}
+                {/* Background decorative elements - responsive */}
                 <div className="absolute inset-0 -z-10">
-                  <div className="absolute top-10 left-10 w-20 h-20 bg-[hsl(234,100%,96%)] rounded-full opacity-50 animate-pulse-slow"></div>
-                  <div className="absolute bottom-10 right-10 w-32 h-32 bg-[hsl(234,89%,60%)] opacity-10 rounded-full animate-bounce-gentle"></div>
+                  <div className="absolute top-6 left-6 sm:top-8 sm:left-8 lg:top-10 lg:left-10 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-[hsl(234,100%,96%)] rounded-full opacity-50 animate-pulse-slow"></div>
+                  <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-[hsl(234,89%,60%)] opacity-10 rounded-full animate-bounce-gentle"></div>
                 </div>
               </div>
             </motion.div>
@@ -189,8 +244,8 @@ export default function Home() {
       </section>
 
       {/* Vision & Features Section */}
-      <section className="py-20 bg-slate-50" id="platform">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 lg:py-20 bg-slate-50" id="platform">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           
           {/* Section Header */}
           <motion.div
@@ -198,22 +253,22 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 lg:mb-20"
           >
             {/* Badge */}
-            <div className="inline-flex items-center bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
-              <Cross size={16} className="mr-2" />
+            <div className="inline-flex items-center bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold mb-6 sm:mb-8 shadow-lg">
+              <Cross size={14} className="mr-1 sm:mr-2 sm:w-4 sm:h-4" />
               Our Mission
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-800 mb-8 leading-tight">
-              WHAT WE DO: <br />
-              <span className="bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-800 mb-6 sm:mb-8 leading-tight">
+              <span className="block sm:inline">WHAT WE DO:</span>{" "}
+              <span className="block bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] bg-clip-text text-transparent">
                 The IFS Mission
               </span>
             </h2>
             
-            <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-5xl mx-auto leading-relaxed mb-12 font-light">
+            <p className="text-sm sm:text-base lg:text-lg xl:text-2xl text-slate-600 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed mb-8 sm:mb-12 font-light px-4 sm:px-0">
               Interactive Faith Solutions LLC (IFS) is a faith-motivated educational technology company dedicated to revolutionizing how people and families interact with Scripture through immersive, interactive, and customized learning experiences based on biblical truth.
             </p>
             
@@ -225,61 +280,61 @@ export default function Home() {
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-[hsl(273,75%,66%)] opacity-5 rounded-full blur-3xl"></div>
               </div>
               
-              <div className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100">
-                <div className="flex items-center justify-center mb-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center shadow-lg">
-                    <Microchip className="text-white" size={32} />
+              <div className="bg-white rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl lg:shadow-2xl border border-slate-100">
+                <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left mb-8 sm:mb-10">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg mb-4 sm:mb-0">
+                    <Microchip className="text-white" size={20} />
                   </div>
-                  <div className="ml-6">
-                    <h3 className="text-3xl font-bold text-slate-800">We design tools that:</h3>
+                  <div className="sm:ml-4 lg:ml-6">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800">We design tools that:</h3>
                   </div>
                 </div>
                 
-                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
                   <motion.div
                     variants={fadeInUp}
-                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                    className="p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                      <Play className="text-white" size={24} />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg mx-auto">
+                      <Play className="text-white" size={16} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Animate Biblical Stories</h4>
-                    <p className="text-slate-600 leading-relaxed text-lg">Bringing Scripture to life through engaging animations and interactive storytelling</p>
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">Animate Biblical Stories</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base lg:text-lg text-center">Bringing Scripture to life through engaging animations and interactive storytelling</p>
                   </motion.div>
                   
                   <motion.div
                     variants={fadeInUp}
-                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                    className="p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(273,75%,66%)] to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                      <Users className="text-white" size={24} />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(273,75%,66%)] to-purple-600 rounded-xl lg:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg mx-auto">
+                      <Users className="text-white" size={16} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Personalized Learning</h4>
-                    <p className="text-slate-600 leading-relaxed text-lg">Customized experiences that adapt to each learner's age, pace, and understanding</p>
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">Personalized Learning</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base lg:text-lg text-center">Customized experiences that adapt to each learner's age, pace, and understanding</p>
                   </motion.div>
                   
                   <motion.div
                     variants={fadeInUp}
-                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                    className="p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(158,64%,52%)] to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                      <Rocket className="text-white" size={24} />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(158,64%,52%)] to-green-600 rounded-xl lg:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg mx-auto">
+                      <Rocket className="text-white" size={16} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Gamified Study</h4>
-                    <p className="text-slate-600 leading-relaxed text-lg">Making daily Bible study engaging and rewarding through interactive challenges</p>
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">Gamified Study</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base lg:text-lg text-center">Making daily Bible study engaging and rewarding through interactive challenges</p>
                   </motion.div>
                 </div>
                 
-                <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                   <motion.div
                     variants={fadeInUp}
-                    className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                    className="p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                      <Heart className="text-white" size={24} />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-xl lg:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg mx-auto">
+                      <Heart className="text-white" size={16} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Community Building</h4>
-                    <p className="text-slate-600 leading-relaxed text-lg">Connecting believers worldwide through shared learning and spiritual growth</p>
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">Community Building</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base lg:text-lg text-center">Connecting believers worldwide through shared learning and spiritual growth</p>
                   </motion.div>
                   
                   <motion.div
@@ -384,7 +439,7 @@ export default function Home() {
       </section>
 
       {/* Donate Now Section */}
-      <section className="py-12 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -392,7 +447,7 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-2xl"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -414,16 +469,16 @@ export default function Home() {
             </div>
 
             {/* Main content */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-pulse-slow">
-                <Heart className="text-white" size={28} />
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-xl lg:shadow-2xl border border-white/20">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg animate-pulse-slow">
+                <Heart className="text-white w-6 h-6 sm:w-7 sm:h-7 lg:w-7 lg:h-7" />
               </div>
               
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-800 mb-3 sm:mb-4 leading-tight">
                 Help Bring IBLU to Life
               </h2>
               
-              <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 px-2 sm:px-0">
                 Your generous donation will help create the world's most innovative Bible learning platform, 
                 touching lives across generations and making Scripture come alive for millions.
               </p>
@@ -431,13 +486,13 @@ export default function Home() {
 
               
               {/* One-Time Giving Section */}
-              <div className="mb-8">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-3">Prefer One-Time Giving?</h3>
-                <p className="text-sm sm:text-base text-slate-600 mb-6">Make a single contribution to support our mission</p>
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Prefer One-Time Giving?</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-slate-600 mb-4 sm:mb-6">Make a single contribution to support our mission</p>
                 
-                <div className="flex justify-center mb-6">
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-xs w-full sm:w-auto">
-                    <div className="text-2xl sm:text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
+                <div className="flex justify-center mb-4 sm:mb-6">
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 w-full max-w-xs">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[hsl(158,64%,52%)] mb-1 sm:mb-2">$1500</div>
                     <p className="text-slate-600 text-xs sm:text-sm">Major development milestone</p>
                   </div>
                 </div>
@@ -541,43 +596,43 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-slate-800 text-white py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="text-center">
             {/* Logo */}
-            <div className="flex items-center justify-center mb-6">
+            <div className="flex items-center justify-center mb-4 sm:mb-6">
               <img 
                 src="/ifs-logo.png" 
                 alt="IFS Interactive Faith Solutions Logo" 
-                className="w-20 h-20 object-contain"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               />
             </div>
             
-            <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-slate-400 mb-6 sm:mb-8 max-w-xl lg:max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               Revolutionizing Bible education through innovation, technology, and Christ-centered learning 
               for people of all ages and backgrounds.
             </p>
             
             {/* Links */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <a href="https://ifs7.com" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+            <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+              <a href="https://ifs7.com" className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base" target="_blank" rel="noopener noreferrer">
                 Visit IFS7.com
               </a>
-              <a href="https://ifs7.com/about" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/about" className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base" target="_blank" rel="noopener noreferrer">
                 About Us
               </a>
-              <a href="https://ifs7.com/contact" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/contact" className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base" target="_blank" rel="noopener noreferrer">
                 Contact
               </a>
-              <a href="https://ifs7.com/privacy" className="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://ifs7.com/privacy" className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base" target="_blank" rel="noopener noreferrer">
                 Privacy
               </a>
             </div>
             
             {/* Copyright */}
-            <div className="border-t border-slate-700 pt-8">
-              <p className="text-slate-400 text-sm">
-                © 2024 IBLU - Interactive Bible Learning University. 
+            <div className="border-t border-slate-700 pt-6 sm:pt-8">
+              <p className="text-slate-400 text-xs sm:text-sm">
+                © 2025 IBLU - Interactive Bible Learning University. 
                 A project of <a href="https://ifs7.com" className="text-[hsl(234,89%,60%)] hover:underline" target="_blank" rel="noopener noreferrer">IFS7.com</a>. 
                 All rights reserved.
               </p>
