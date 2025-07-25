@@ -231,57 +231,66 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid lg:grid-cols-3 gap-8 mb-12">
                   <motion.div
                     variants={fadeInUp}
-                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300"
+                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(234,89%,60%)] to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Play className="text-white" size={20} />
+                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Play className="text-white" size={24} />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-800 mb-2">Animate Biblical Stories</h4>
-                      <p className="text-slate-600 leading-relaxed">Bringing Scripture to life through engaging animations and interactive storytelling</p>
-                    </div>
+                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Animate Biblical Stories</h4>
+                    <p className="text-slate-600 leading-relaxed text-lg">Bringing Scripture to life through engaging animations and interactive storytelling</p>
                   </motion.div>
                   
                   <motion.div
                     variants={fadeInUp}
-                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-lg transition-all duration-300"
+                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(273,75%,66%)] to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Users className="text-white" size={20} />
+                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(273,75%,66%)] to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Users className="text-white" size={24} />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-800 mb-2">Personalized Learning</h4>
-                      <p className="text-slate-600 leading-relaxed">Customized experiences that adapt to each learner's age, pace, and understanding</p>
-                    </div>
+                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Personalized Learning</h4>
+                    <p className="text-slate-600 leading-relaxed text-lg">Customized experiences that adapt to each learner's age, pace, and understanding</p>
                   </motion.div>
                   
                   <motion.div
                     variants={fadeInUp}
-                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-all duration-300"
+                    className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(158,64%,52%)] to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Rocket className="text-white" size={20} />
+                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(158,64%,52%)] to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Rocket className="text-white" size={24} />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-800 mb-2">Gamified Study</h4>
-                      <p className="text-slate-600 leading-relaxed">Making daily Bible study engaging and rewarding through interactive challenges</p>
+                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Gamified Study</h4>
+                    <p className="text-slate-600 leading-relaxed text-lg">Making daily Bible study engaging and rewarding through interactive challenges</p>
+                  </motion.div>
+                </div>
+                
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <motion.div
+                    variants={fadeInUp}
+                    className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                  >
+                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Heart className="text-white" size={24} />
                     </div>
+                    <h4 className="text-2xl font-bold text-slate-800 mb-4">Community Building</h4>
+                    <p className="text-slate-600 leading-relaxed text-lg">Connecting believers worldwide through shared learning and spiritual growth</p>
                   </motion.div>
                   
                   <motion.div
                     variants={fadeInUp}
-                    className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
+                    className="p-8 rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 border-4 border-[hsl(234,89%,60%)] hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Heart className="text-white" size={20} />
+                    {/* Special highlight badge */}
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform rotate-12">
+                      Featured
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-800 mb-2">Community Building</h4>
-                      <p className="text-slate-600 leading-relaxed">Connecting believers worldwide through shared learning and spiritual growth</p>
+                    <div className="w-16 h-16 bg-gradient-to-br from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Baby className="text-white" size={24} />
                     </div>
+                    <h4 className="text-2xl font-bold text-slate-800 mb-4">For Young Learners</h4>
+                    <p className="text-slate-600 leading-relaxed text-lg">Colorful animations, interactive stories, and age-appropriate content that makes Bible learning an exciting adventure for children.</p>
                   </motion.div>
                 </div>
               </div>
