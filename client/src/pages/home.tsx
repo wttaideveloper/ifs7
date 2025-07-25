@@ -382,7 +382,168 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Donate Now Section */}
+      <section className="py-20 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center"
+          >
+            {/* Floating hearts animation */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-10 left-10 animate-bounce-gentle">
+                <Heart className="text-white/20" size={24} />
+              </div>
+              <div className="absolute top-20 right-20 animate-bounce-gentle" style={{animationDelay: '1s'}}>
+                <Heart className="text-white/20" size={20} />
+              </div>
+              <div className="absolute bottom-20 left-20 animate-bounce-gentle" style={{animationDelay: '2s'}}>
+                <Heart className="text-white/20" size={28} />
+              </div>
+            </div>
 
+            {/* Main content */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-white/20">
+              <div className="w-20 h-20 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg animate-pulse-slow">
+                <Heart className="text-white" size={36} />
+              </div>
+              
+              <h2 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                Help Bring IBLU to Life
+              </h2>
+              
+              <p className="text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
+                Your generous donation will help create the world's most innovative Bible learning platform, 
+                touching lives across generations and making Scripture come alive for millions.
+              </p>
+              
+              {/* Impact showcase */}
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <motion.div
+                  variants={fadeInUp}
+                  className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-[hsl(234,89%,60%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Baby className="text-white" size={28} />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">Transform Children's Lives</h4>
+                  <p className="text-slate-600">Interactive stories that make Bible learning an exciting adventure</p>
+                </motion.div>
+                
+                <motion.div
+                  variants={fadeInUp}
+                  className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-[hsl(273,75%,66%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <University className="text-white" size={28} />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">Empower Adult Learning</h4>
+                  <p className="text-slate-600">Deep theological content that grows with your spiritual journey</p>
+                </motion.div>
+                
+                <motion.div
+                  variants={fadeInUp}
+                  className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-[hsl(158,64%,52%)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Users className="text-white" size={28} />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">Build Global Community</h4>
+                  <p className="text-slate-600">Connect believers worldwide through shared learning experiences</p>
+                </motion.div>
+              </div>
+              
+              {/* Donation tiers */}
+              <div className="grid md:grid-cols-4 gap-4 mb-12">
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
+                  <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$25</div>
+                  <p className="text-slate-600 text-sm">Support one child's learning module</p>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 transform scale-105">
+                  <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$75</div>
+                  <p className="text-slate-600 text-sm">Fund interactive Bible story</p>
+                </div>
+                <div className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
+                  <div className="text-3xl font-bold text-[hsl(273,75%,66%)] mb-2">$150</div>
+                  <p className="text-slate-600 text-sm">Enable adaptive learning features</p>
+                </div>
+                <div className="bg-gradient-to-br from-amber-50 to-orange-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
+                  <div className="text-3xl font-bold text-[hsl(38,92%,50%)] mb-2">$500</div>
+                  <p className="text-slate-600 text-sm">Sponsor platform development</p>
+                </div>
+              </div>
+              
+              {/* Call to action buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button 
+                  asChild
+                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-12 py-6 rounded-full font-bold text-xl min-w-72 shadow-2xl transform hover:scale-110 transition-all duration-300"
+                >
+                  <a 
+                    href="https://ifs7.com/donate" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-3"
+                  >
+                    <Heart size={24} />
+                    <span>Donate Now</span>
+                    <ChevronRight size={20} />
+                  </a>
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  asChild
+                  className="border-3 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-12 py-6 rounded-full font-bold text-xl hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 min-w-72 shadow-xl"
+                >
+                  <a 
+                    href="https://ifs7.com/monthly" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-3"
+                  >
+                    <Handshake size={24} />
+                    <span>Monthly Giving</span>
+                  </a>
+                </Button>
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="mt-12 pt-8 border-t border-slate-200">
+                <p className="text-slate-600 mb-4 font-semibold">Trusted by thousands of supporters worldwide</p>
+                <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-slate-500">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>Secure Donations</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>100% Goes to Development</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>Tax Deductible</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>Regular Updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
