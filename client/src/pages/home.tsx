@@ -372,7 +372,7 @@ export default function Home() {
                 </div>
                 
                 <p className="text-lg text-slate-600">
-                  Your support through <strong>WhiteIfs7</strong> helps fund this important project and brings us closer to launch.
+                  Your support through <strong>IFS7.com</strong> helps fund this important project and brings us closer to launch.
                 </p>
               </div>
             </div>
