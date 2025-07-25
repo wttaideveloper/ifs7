@@ -46,9 +46,9 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="/ifs7-logo.jpeg" 
-                alt="IFS7 Logo" 
-                className="w-16 h-16 rounded-lg object-cover shadow-md"
+                src="/ifs-logo.png" 
+                alt="IFS Interactive Faith Solutions Logo" 
+                className="w-16 h-16 rounded-lg object-contain shadow-md"
               />
             </div>
             
@@ -521,9 +521,9 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center justify-center mb-6">
               <img 
-                src="/ifs7-logo.jpeg" 
-                alt="IFS7 Logo" 
-                className="w-16 h-16 rounded-lg object-cover shadow-md"
+                src="/ifs-logo.png" 
+                alt="IFS Interactive Faith Solutions Logo" 
+                className="w-16 h-16 rounded-lg object-contain shadow-md"
               />
             </div>
             
