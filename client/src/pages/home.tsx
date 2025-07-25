@@ -258,9 +258,11 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16 lg:mb-20"
           >
             {/* Badge */}
-            <div className="inline-flex items-center bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold mb-6 sm:mb-8 shadow-lg">
-              <Cross size={14} className="mr-1 sm:mr-2 sm:w-4 sm:h-4" />
-              Our Mission
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="inline-flex items-center bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                <Cross size={14} className="mr-1 sm:mr-2 sm:w-4 sm:h-4" />
+                Our Mission
+              </div>
             </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-800 mb-6 sm:mb-8 leading-tight">
