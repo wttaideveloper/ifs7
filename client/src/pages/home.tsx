@@ -58,10 +58,9 @@ export default function Home() {
             
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">About</a>
-              <a href="#platform" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Platform</a>
-              <a href="#features" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Features</a>
-              <a href="#support" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Support</a>
+              <a href="#hero" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Home</a>
+              <a href="#platform" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Our Mission</a>
+              <a href="#contribute" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium">Donate</a>
             </div>
             
             {/* CTA Button */}
@@ -384,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* Donate Now Section */}
-      <section className="py-20 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
