@@ -46,13 +46,13 @@ export default function Home() {
       {/* Navigation */}
       <nav className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <div className="flex items-center">
               <img 
                 src="/ifs-logo.png" 
                 alt="IFS Interactive Faith Solutions Logo" 
-                className="w-20 h-20 rounded-lg object-contain shadow-md"
+                className="w-14 h-14 md:w-20 md:h-20 rounded-lg object-contain shadow-md"
               />
             </div>
             
@@ -66,11 +66,12 @@ export default function Home() {
             {/* CTA Button */}
             <Button 
               asChild
-              className="btn-primary text-white px-6 py-2 rounded-full font-semibold text-sm"
+              className="btn-primary text-white px-4 py-2 md:px-6 md:py-2 rounded-full font-semibold text-xs md:text-sm"
             >
-              <a href="#contribute" className="flex items-center space-x-2">
-                <Heart size={16} />
-                <span>Support IBLU</span>
+              <a href="#contribute" className="flex items-center space-x-1 md:space-x-2">
+                <Heart size={14} className="md:w-4 md:h-4" />
+                <span className="hidden sm:inline">Support IBLU</span>
+                <span className="sm:hidden">Donate</span>
               </a>
             </Button>
           </div>
@@ -96,7 +97,7 @@ export default function Home() {
               </Badge>
               
               {/* Main Headline */}
-              <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
                 Faith Meets
                 <span className="block">Innovation.</span>
                 <span className="text-[hsl(234,89%,60%)] block">Learning the Bible</span>
@@ -112,20 +113,20 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button 
                   asChild
-                  className="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg min-w-48"
+                  className="btn-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg w-full sm:min-w-48 sm:w-auto"
                 >
                   <a href="#contribute" className="flex items-center justify-center space-x-2">
-                    <Rocket size={20} />
+                    <Rocket size={18} className="sm:w-5 sm:h-5" />
                     <span>Support the Vision</span>
                   </a>
                 </Button>
                 <Button 
                   variant="outline"
                   asChild
-                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 min-w-48"
+                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 w-full sm:min-w-48 sm:w-auto"
                 >
                   <a href="#learn-more" className="flex items-center justify-center space-x-2">
-                    <PlayCircle size={20} />
+                    <PlayCircle size={18} className="sm:w-5 sm:h-5" />
                     <span>Learn How It Works</span>
                   </a>
                 </Button>
@@ -205,14 +206,14 @@ export default function Home() {
               Our Mission
             </div>
             
-            <h2 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-800 mb-8 leading-tight">
               WHAT WE DO: <br />
               <span className="bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] bg-clip-text text-transparent">
                 The IFS Mission
               </span>
             </h2>
             
-            <p className="text-2xl text-slate-600 max-w-5xl mx-auto leading-relaxed mb-12 font-light">
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-5xl mx-auto leading-relaxed mb-12 font-light">
               Interactive Faith Solutions LLC (IFS) is a faith-motivated educational technology company dedicated to revolutionizing how people and families interact with Scripture through immersive, interactive, and customized learning experiences based on biblical truth.
             </p>
             
@@ -234,7 +235,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="grid lg:grid-cols-3 gap-8 mb-12">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
                   <motion.div
                     variants={fadeInUp}
                     className="lg:col-span-1 p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
@@ -269,7 +270,7 @@ export default function Home() {
                   </motion.div>
                 </div>
                 
-                <div className="grid lg:grid-cols-2 gap-8">
+                <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                   <motion.div
                     variants={fadeInUp}
                     className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
@@ -321,7 +322,7 @@ export default function Home() {
                   <Construction className="text-white" size={40} />
                 </div>
                 
-                <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
                   Development Status
                 </h2>
                 
@@ -330,7 +331,7 @@ export default function Home() {
                   Currently Under Development
                 </div>
                 
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
                   IBLU is actively being developed by our dedicated team at Interactive Faith Solutions. 
                   We're working hard to bring you this revolutionary Bible learning platform.
                 </p>
@@ -418,11 +419,11 @@ export default function Home() {
                 <Heart className="text-white" size={28} />
               </div>
               
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
                 Help Bring IBLU to Life
               </h2>
               
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
+              <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
                 Your generous donation will help create the world's most innovative Bible learning platform, 
                 touching lives across generations and making Scripture come alive for millions.
               </p>
@@ -431,45 +432,45 @@ export default function Home() {
               
               {/* One-Time Giving Section */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-slate-800 mb-3">Prefer One-Time Giving?</h3>
-                <p className="text-base text-slate-600 mb-6">Make a single contribution to support our mission</p>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-3">Prefer One-Time Giving?</h3>
+                <p className="text-sm sm:text-base text-slate-600 mb-6">Make a single contribution to support our mission</p>
                 
                 <div className="flex justify-center mb-6">
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-xs">
-                    <div className="text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
-                    <p className="text-slate-600 text-sm">Major development milestone</p>
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-xs w-full sm:w-auto">
+                    <div className="text-2xl sm:text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
+                    <p className="text-slate-600 text-xs sm:text-sm">Major development milestone</p>
                   </div>
                 </div>
                 
                 {/* Custom Amount Section */}
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="text-center sm:text-left">
-                      <h4 className="text-lg font-bold text-slate-800 mb-1">Custom Amount</h4>
-                      <p className="text-slate-600 text-sm">Choose your own donation amount</p>
+                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 sm:p-6 rounded-2xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="text-center">
+                      <h4 className="text-base sm:text-lg font-bold text-slate-800 mb-1">Custom Amount</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm">Choose your own donation amount</p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
                       <div className="relative">
-                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg font-bold text-slate-600">$</span>
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-base sm:text-lg font-bold text-slate-600">$</span>
                         <input 
                           type="number" 
                           placeholder="100" 
                           min="1"
-                          className="w-28 h-12 pl-6 pr-3 text-lg font-bold text-center rounded-lg border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-2 focus:ring-[hsl(234,89%,60%)]/20"
+                          className="w-24 sm:w-28 h-10 sm:h-12 pl-5 sm:pl-6 pr-3 text-base sm:text-lg font-bold text-center rounded-lg border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-2 focus:ring-[hsl(234,89%,60%)]/20"
                         />
                       </div>
                       <Button 
                         asChild
-                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg transform hover:scale-105 transition-all duration-300"
+                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-bold text-xs sm:text-sm shadow-lg transform hover:scale-105 transition-all duration-300"
                       >
                         <a 
                           href="https://ifs7.com/donate" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-2"
+                          className="flex items-center space-x-1 sm:space-x-2"
                         >
                           <span>Use This</span>
-                          <ChevronRight size={16} />
+                          <ChevronRight size={14} className="sm:w-4 sm:h-4" />
                         </a>
                       </Button>
                     </div>
@@ -478,10 +479,10 @@ export default function Home() {
               </div>
               
               {/* Call to action buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6">
                 <Button 
                   asChild
-                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg min-w-56 shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg w-full sm:min-w-56 sm:w-auto shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <a 
                     href="https://ifs7.com/donate" 
@@ -489,16 +490,16 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center space-x-2"
                   >
-                    <Heart size={20} />
+                    <Heart size={18} className="sm:w-5 sm:h-5" />
                     <span>Donate Now</span>
-                    <ChevronRight size={18} />
+                    <ChevronRight size={16} className="sm:w-4 sm:h-4" />
                   </a>
                 </Button>
                 
                 <Button 
                   variant="outline"
                   asChild
-                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 min-w-56 shadow-lg"
+                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 w-full sm:min-w-56 sm:w-auto shadow-lg"
                 >
                   <a 
                     href="https://ifs7.com/monthly" 
@@ -506,7 +507,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center space-x-2"
                   >
-                    <Handshake size={20} />
+                    <Handshake size={18} className="sm:w-5 sm:h-5" />
                     <span>Monthly Giving</span>
                   </a>
                 </Button>
