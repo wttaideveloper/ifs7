@@ -131,8 +131,8 @@ export default function Home() {
               {/* Statistics */}
               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">All Ages</div>
-                  <div className="text-sm text-slate-500">Designed For</div>
+                  <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">Kids to Adults</div>
+                  <div className="text-sm text-slate-500">Every Age</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-[hsl(234,89%,60%)]">Interactive</div>
