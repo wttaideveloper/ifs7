@@ -464,23 +464,67 @@ export default function Home() {
                 </motion.div>
               </div>
               
-              {/* Donation tiers */}
-              <div className="grid md:grid-cols-4 gap-4 mb-12">
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$25</div>
-                  <p className="text-slate-600 text-sm">Support one child's learning module</p>
+              {/* One-Time Giving Section */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">Prefer One-Time Giving?</h3>
+                <p className="text-lg text-slate-600 mb-8">Make a single contribution to support our mission</p>
+                
+                <div className="grid md:grid-cols-5 gap-4 mb-6">
+                  <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$25</div>
+                    <p className="text-slate-600 text-sm">Support one child's learning module</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 transform scale-105 cursor-pointer">
+                    <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$75</div>
+                    <p className="text-slate-600 text-sm">Fund interactive Bible story</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="text-3xl font-bold text-[hsl(273,75%,66%)] mb-2">$150</div>
+                    <p className="text-slate-600 text-sm">Enable adaptive learning features</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="text-3xl font-bold text-[hsl(38,92%,50%)] mb-2">$500</div>
+                    <p className="text-slate-600 text-sm">Sponsor platform development</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
+                    <p className="text-slate-600 text-sm">Major development milestone</p>
+                  </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 transform scale-105">
-                  <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$75</div>
-                  <p className="text-slate-600 text-sm">Fund interactive Bible story</p>
-                </div>
-                <div className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-[hsl(273,75%,66%)] mb-2">$150</div>
-                  <p className="text-slate-600 text-sm">Enable adaptive learning features</p>
-                </div>
-                <div className="bg-gradient-to-br from-amber-50 to-orange-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl font-bold text-[hsl(38,92%,50%)] mb-2">$500</div>
-                  <p className="text-slate-600 text-sm">Sponsor platform development</p>
+                
+                {/* Custom Amount Section */}
+                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div className="text-center sm:text-left">
+                      <h4 className="text-2xl font-bold text-slate-800 mb-2">Custom Amount</h4>
+                      <p className="text-slate-600">Choose your own donation amount</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold text-slate-600">$</span>
+                        <input 
+                          type="number" 
+                          placeholder="100" 
+                          min="1"
+                          className="w-32 h-14 pl-8 pr-4 text-2xl font-bold text-center rounded-xl border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-4 focus:ring-[hsl(234,89%,60%)]/20"
+                        />
+                      </div>
+                      <Button 
+                        asChild
+                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                      >
+                        <a 
+                          href="https://ifs7.com/donate" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2"
+                        >
+                          <span>Use This</span>
+                          <ChevronRight size={20} />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
               
