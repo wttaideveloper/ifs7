@@ -383,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* Donate Now Section */}
-      <section className="py-20 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
+      <section className="py-12 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -413,16 +413,16 @@ export default function Home() {
             </div>
 
             {/* Main content */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-white/20">
-              <div className="w-20 h-20 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg animate-pulse-slow">
-                <Heart className="text-white" size={36} />
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
+              <div className="w-16 h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-pulse-slow">
+                <Heart className="text-white" size={28} />
               </div>
               
-              <h2 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
                 Help Bring IBLU to Life
               </h2>
               
-              <p className="text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
                 Your generous donation will help create the world's most innovative Bible learning platform, 
                 touching lives across generations and making Scripture come alive for millions.
               </p>
@@ -430,37 +430,37 @@ export default function Home() {
 
               
               {/* One-Time Giving Section */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Prefer One-Time Giving?</h3>
-                <p className="text-lg text-slate-600 mb-8">Make a single contribution to support our mission</p>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-slate-800 mb-3">Prefer One-Time Giving?</h3>
+                <p className="text-base text-slate-600 mb-6">Make a single contribution to support our mission</p>
                 
                 <div className="flex justify-center mb-6">
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-sm">
-                    <div className="text-4xl font-bold text-[hsl(158,64%,52%)] mb-3">$1500</div>
-                    <p className="text-slate-600 text-base">Major development milestone</p>
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 max-w-xs">
+                    <div className="text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
+                    <p className="text-slate-600 text-sm">Major development milestone</p>
                   </div>
                 </div>
                 
                 {/* Custom Amount Section */}
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="text-center sm:text-left">
-                      <h4 className="text-2xl font-bold text-slate-800 mb-2">Custom Amount</h4>
-                      <p className="text-slate-600">Choose your own donation amount</p>
+                      <h4 className="text-lg font-bold text-slate-800 mb-1">Custom Amount</h4>
+                      <p className="text-slate-600 text-sm">Choose your own donation amount</p>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3">
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold text-slate-600">$</span>
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg font-bold text-slate-600">$</span>
                         <input 
                           type="number" 
                           placeholder="100" 
                           min="1"
-                          className="w-32 h-14 pl-8 pr-4 text-2xl font-bold text-center rounded-xl border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-4 focus:ring-[hsl(234,89%,60%)]/20"
+                          className="w-28 h-12 pl-6 pr-3 text-lg font-bold text-center rounded-lg border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-2 focus:ring-[hsl(234,89%,60%)]/20"
                         />
                       </div>
                       <Button 
                         asChild
-                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg transform hover:scale-105 transition-all duration-300"
                       >
                         <a 
                           href="https://ifs7.com/donate" 
@@ -469,7 +469,7 @@ export default function Home() {
                           className="flex items-center space-x-2"
                         >
                           <span>Use This</span>
-                          <ChevronRight size={20} />
+                          <ChevronRight size={16} />
                         </a>
                       </Button>
                     </div>
@@ -478,58 +478,58 @@ export default function Home() {
               </div>
               
               {/* Call to action buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <Button 
                   asChild
-                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-12 py-6 rounded-full font-bold text-xl min-w-72 shadow-2xl transform hover:scale-110 transition-all duration-300"
+                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg min-w-56 shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <a 
                     href="https://ifs7.com/donate" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-3"
+                    className="flex items-center justify-center space-x-2"
                   >
-                    <Heart size={24} />
+                    <Heart size={20} />
                     <span>Donate Now</span>
-                    <ChevronRight size={20} />
+                    <ChevronRight size={18} />
                   </a>
                 </Button>
                 
                 <Button 
                   variant="outline"
                   asChild
-                  className="border-3 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-12 py-6 rounded-full font-bold text-xl hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 min-w-72 shadow-xl"
+                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 min-w-56 shadow-lg"
                 >
                   <a 
                     href="https://ifs7.com/monthly" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-3"
+                    className="flex items-center justify-center space-x-2"
                   >
-                    <Handshake size={24} />
+                    <Handshake size={20} />
                     <span>Monthly Giving</span>
                   </a>
                 </Button>
               </div>
               
               {/* Trust indicators */}
-              <div className="mt-12 pt-8 border-t border-slate-200">
-                <p className="text-slate-600 mb-4 font-semibold">Trusted by thousands of supporters worldwide</p>
-                <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-slate-500">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="text-green-500" size={16} />
+              <div className="pt-6 border-t border-slate-200">
+                <p className="text-slate-600 mb-3 font-semibold text-sm">Trusted by thousands of supporters worldwide</p>
+                <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-slate-500">
+                  <div className="flex items-center space-x-1">
+                    <CheckCircle className="text-green-500" size={14} />
                     <span>Secure Donations</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="text-green-500" size={16} />
+                  <div className="flex items-center space-x-1">
+                    <CheckCircle className="text-green-500" size={14} />
                     <span>100% Goes to Development</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="text-green-500" size={16} />
+                  <div className="flex items-center space-x-1">
+                    <CheckCircle className="text-green-500" size={14} />
                     <span>Tax Deductible</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="text-green-500" size={16} />
+                  <div className="flex items-center space-x-1">
+                    <CheckCircle className="text-green-500" size={14} />
                     <span>Regular Updates</span>
                   </div>
                 </div>
