@@ -469,7 +469,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">Prefer One-Time Giving?</h3>
                 <p className="text-lg text-slate-600 mb-8">Make a single contribution to support our mission</p>
                 
-                <div className="grid md:grid-cols-5 gap-4 mb-6">
+                <div className="grid md:grid-cols-4 gap-4 mb-6">
                   <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="text-3xl font-bold text-[hsl(234,89%,60%)] mb-2">$25</div>
                     <p className="text-slate-600 text-sm">Support one child's learning module</p>
@@ -481,10 +481,6 @@ export default function Home() {
                   <div className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="text-3xl font-bold text-[hsl(273,75%,66%)] mb-2">$150</div>
                     <p className="text-slate-600 text-sm">Enable adaptive learning features</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <div className="text-3xl font-bold text-[hsl(38,92%,50%)] mb-2">$500</div>
-                    <p className="text-slate-600 text-sm">Sponsor platform development</p>
                   </div>
                   <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="text-3xl font-bold text-[hsl(158,64%,52%)] mb-2">$1500</div>
