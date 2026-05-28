@@ -67,10 +67,14 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
             description: `Your gift of $${amount.toFixed(2)} was received successfully.`,
           });
         }}
-        onError={() => {
+        onError={(err) => {
+          console.error("PayPal error:", err);
           toast({
             title: "Payment failed",
-            description: "Something went wrong with PayPal. Please try again.",
+            description:
+              err instanceof Error
+                ? err.message
+                : "Something went wrong with PayPal. Please try again.",
             variant: "destructive",
           });
         }}

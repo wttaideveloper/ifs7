@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { createPayPalOrder } from "../../server/paypal";
+import { createPayPalOrder } from "../../lib/paypal";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -15,6 +15,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ id });
   } catch (error) {
     console.error("PayPal create-order error:", error);
-    return res.status(500).json({ message: "Failed to create PayPal order" });
+    const message =
+      error instanceof Error ? error.message : "Failed to create PayPal order";
+    const status = message.includes("not configured") ? 503 : 500;
+    return res.status(status).json({ message });
   }
 }
