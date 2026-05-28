@@ -1,40 +1,11 @@
 export const config = { runtime: "edge" };
 
-const PAYPAL_API_BASE =
-  process.env.PAYPAL_MODE === "live"
-    ? "https://api-m.paypal.com"
-    : "https://api-m.sandbox.paypal.com";
-
-async function getAccessToken() {
-  const clientId = process.env.PAYPAL_CLIENT_ID;
-  const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
-  if (!clientId || !clientSecret) {
-    throw new Error("PayPal credentials are not configured");
-  }
-
-  const auth = btoa(`${clientId}:${clientSecret}`);
-  const response = await fetch(`${PAYPAL_API_BASE}/v1/oauth2/token`, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${auth}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  if (!response.ok) {
-    console.error("PayPal auth failed:", await response.text());
-    throw new Error("PayPal authentication failed");
-  }
-
-  const data = await response.json();
-  return data.access_token;
-}
+import { getAccessToken } from "./_paypal.js";
 
 async function capturePayPalOrder(orderID) {
-  const accessToken = await getAccessToken();
+  const { accessToken, apiBase } = await getAccessToken();
   const response = await fetch(
-    `${PAYPAL_API_BASE}/v2/checkout/orders/${orderID}/capture`,
+    `${apiBase}/v2/checkout/orders/${orderID}/capture`,
     {
       method: "POST",
       headers: {
