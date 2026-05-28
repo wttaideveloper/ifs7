@@ -1,9 +1,9 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { capturePayPalOrder, createPayPalOrder } from "./paypal";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  app.post("/api/paypal/create-order", async (req, res) => {
+  const handleCreateOrder = async (req: Request, res: Response) => {
     try {
       const amount = Number(req.body?.amount);
       if (!amount || amount < 1) {
@@ -15,9 +15,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("PayPal create-order error:", error);
       res.status(500).json({ message: "Failed to create PayPal order" });
     }
-  });
+  };
 
-  app.post("/api/paypal/capture-order", async (req, res) => {
+  const handleCaptureOrder = async (req: Request, res: Response) => {
     try {
       const orderID = req.body?.orderID as string | undefined;
       if (!orderID) {
@@ -29,7 +29,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("PayPal capture-order error:", error);
       res.status(500).json({ message: "Failed to capture PayPal payment" });
     }
-  });
+  };
+
+  app.post("/api/create-order", handleCreateOrder);
+  app.post("/api/capture-order", handleCaptureOrder);
+  app.post("/api/paypal/create-order", handleCreateOrder);
+  app.post("/api/paypal/capture-order", handleCaptureOrder);
 
   const httpServer = createServer(app);
 

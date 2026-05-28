@@ -1,14 +1,9 @@
 {
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist/public",
-  "functions": {
-    "api/**/*.ts": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/api/paypal/create-order", "destination": "/api/create-order" },
+    { "source": "/api/paypal/capture-order", "destination": "/api/capture-order" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

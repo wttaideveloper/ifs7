@@ -36,7 +36,7 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
         style={{ layout: "vertical", color: "gold", shape: "rect", label: "donate" }}
         disabled={amount < 1}
         createOrder={async () => {
-          const response = await fetch("/api/paypal/create-order", {
+          const response = await fetch("/api/create-order", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount }),
@@ -51,7 +51,7 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
           return data.id;
         }}
         onApprove={async (data) => {
-          const response = await fetch("/api/paypal/capture-order", {
+          const response = await fetch("/api/capture-order", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ orderID: data.orderID }),
