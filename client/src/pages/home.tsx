@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import Donationpart from "@/components/donationpart";
+
 import { useState } from "react";
 import { 
   GraduationCap, 
@@ -65,7 +67,7 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <a href="#hero" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Home</a>
               <a href="#platform" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Our Mission</a>
-              <a href="#contribute" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Donate</a>
+              <a href="#contribute" className="text-slate-600 hover:text-[hsl(234,89%,60%)] transition-colors font-medium text-sm lg:text-base">Partner with us</a>
             </div>
             
             {/* Desktop CTA Button */}
@@ -340,11 +342,12 @@ export default function Home() {
                     <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">Community Building</h4>
                     <p className="text-slate-600 leading-relaxed text-sm sm:text-base lg:text-lg text-center">Connecting believers worldwide through shared learning and spiritual growth</p>
                   </motion.div>
-                  
+
                   <motion.div
                     variants={fadeInUp}
                     className="p-8 rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 border-4 border-[hsl(234,89%,60%)] hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden"
                   >
+                    
                     {/* Special highlight badge */}
                     <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[hsl(234,89%,60%)] to-[hsl(273,75%,66%)] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform rotate-12">
                       Featured
@@ -441,163 +444,17 @@ export default function Home() {
 
         </div>
       </section>
+      
+
+<div id="contribute">
+  <Donationpart />
+</div>
+
+       
+       {/* <CustomDonation frequency="Monthly" index={0} />*/}
+       {/*<Donation />*/}
 
       {/* Donate Now Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-[hsl(234,89%,60%)] via-[hsl(273,75%,66%)] to-[hsl(234,89%,60%)] relative overflow-hidden" id="contribute">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-2xl"></div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
-            {/* Floating hearts animation */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-10 left-10 animate-bounce-gentle">
-                <Heart className="text-white/20" size={24} />
-              </div>
-              <div className="absolute top-20 right-20 animate-bounce-gentle" style={{animationDelay: '1s'}}>
-                <Heart className="text-white/20" size={20} />
-              </div>
-              <div className="absolute bottom-20 left-20 animate-bounce-gentle" style={{animationDelay: '2s'}}>
-                <Heart className="text-white/20" size={28} />
-              </div>
-            </div>
-
-            {/* Main content */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-xl lg:shadow-2xl border border-white/20">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[hsl(38,92%,50%)] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg animate-pulse-slow">
-                <Heart className="text-white w-6 h-6 sm:w-7 sm:h-7 lg:w-7 lg:h-7" />
-              </div>
-              
-              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-800 mb-3 sm:mb-4 leading-tight">
-                Help Bring IBLU to Life
-              </h2>
-              
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 px-2 sm:px-0">
-                Your generous donation will help create the world's most innovative Bible learning platform, 
-                touching lives across generations and making Scripture come alive for millions.
-              </p>
-              
-
-              
-              {/* One-Time Giving Section */}
-              <div className="mb-6 sm:mb-8">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Prefer One-Time Giving?</h3>
-                <p className="text-xs sm:text-sm lg:text-base text-slate-600 mb-4 sm:mb-6">Make a single contribution to support our mission</p>
-                
-                <div className="flex justify-center mb-4 sm:mb-6">
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl text-center hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 w-full max-w-xs">
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[hsl(158,64%,52%)] mb-1 sm:mb-2">$1500</div>
-                    <p className="text-slate-600 text-xs sm:text-sm">Major development milestone</p>
-                  </div>
-                </div>
-                
-                {/* Custom Amount Section */}
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 sm:p-6 rounded-2xl border-2 border-[hsl(234,89%,60%)] shadow-lg">
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="text-center">
-                      <h4 className="text-base sm:text-lg font-bold text-slate-800 mb-1">Custom Amount</h4>
-                      <p className="text-slate-600 text-xs sm:text-sm">Choose your own donation amount</p>
-                    </div>
-                    <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
-                      <div className="relative">
-                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-base sm:text-lg font-bold text-slate-600">$</span>
-                        <input 
-                          type="number" 
-                          placeholder="100" 
-                          min="1"
-                          className="w-24 sm:w-28 h-10 sm:h-12 pl-5 sm:pl-6 pr-3 text-base sm:text-lg font-bold text-center rounded-lg border-2 border-[hsl(234,89%,60%)] focus:outline-none focus:ring-2 focus:ring-[hsl(234,89%,60%)]/20"
-                        />
-                      </div>
-                      <Button 
-                        asChild
-                        className="bg-[hsl(234,89%,60%)] hover:bg-[hsl(234,89%,55%)] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-bold text-xs sm:text-sm shadow-lg transform hover:scale-105 transition-all duration-300"
-                      >
-                        <a 
-                          href="https://ifs7.com/donate" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-1 sm:space-x-2"
-                        >
-                          <span>Use This</span>
-                          <ChevronRight size={14} className="sm:w-4 sm:h-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Call to action buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6">
-                <Button 
-                  asChild
-                  className="bg-gradient-to-r from-[hsl(38,92%,50%)] to-orange-600 hover:from-[hsl(38,92%,45%)] hover:to-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg w-full sm:min-w-56 sm:w-auto shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <a 
-                    href="https://ifs7.com/donate" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2"
-                  >
-                    <Heart size={18} className="sm:w-5 sm:h-5" />
-                    <span>Donate Now</span>
-                    <ChevronRight size={16} className="sm:w-4 sm:h-4" />
-                  </a>
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  asChild
-                  className="border-2 border-[hsl(234,89%,60%)] text-[hsl(234,89%,60%)] bg-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[hsl(234,89%,60%)] hover:text-white transition-all duration-300 w-full sm:min-w-56 sm:w-auto shadow-lg"
-                >
-                  <a 
-                    href="https://ifs7.com/monthly" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2"
-                  >
-                    <Handshake size={18} className="sm:w-5 sm:h-5" />
-                    <span>Monthly Giving</span>
-                  </a>
-                </Button>
-              </div>
-              
-              {/* Trust indicators */}
-              <div className="pt-6 border-t border-slate-200">
-                <p className="text-slate-600 mb-3 font-semibold text-sm">Trusted by thousands of supporters worldwide</p>
-                <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-slate-500">
-                  <div className="flex items-center space-x-1">
-                    <CheckCircle className="text-green-500" size={14} />
-                    <span>Secure Donations</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <CheckCircle className="text-green-500" size={14} />
-                    <span>100% Goes to Development</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <CheckCircle className="text-green-500" size={14} />
-                    <span>Tax Deductible</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <CheckCircle className="text-green-500" size={14} />
-                    <span>Regular Updates</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-8 sm:py-12">
