@@ -3,11 +3,19 @@ import { useToast } from "@/hooks/use-toast";
 
 type PayPalDonateButtonProps = {
   amount: number;
+  paymentKey?: string;
+  successTitle?: string;
+  successDescription?: string;
 };
 
 const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID as string | undefined;
 
-export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) {
+export default function PayPalDonateButton({
+  amount,
+  paymentKey,
+  successTitle = "Thank you for your donation!",
+  successDescription,
+}: PayPalDonateButtonProps) {
   const { toast } = useToast();
 
   if (!clientId) {
@@ -26,6 +34,7 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
 
   return (
     <PayPalScriptProvider
+      key={paymentKey ?? String(amount)}
       options={{
         clientId,
         currency: "USD",
@@ -33,6 +42,7 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
       }}
     >
       <PayPalButtons
+        key={paymentKey ?? String(amount)}
         style={{ layout: "vertical", color: "gold", shape: "rect", label: "donate" }}
         disabled={amount < 1}
         createOrder={async () => {
@@ -63,8 +73,10 @@ export default function PayPalDonateButton({ amount }: PayPalDonateButtonProps) 
           }
 
           toast({
-            title: "Thank you for your donation!",
-            description: `Your gift of $${amount.toFixed(2)} was received successfully.`,
+            title: successTitle,
+            description:
+              successDescription ??
+              `Your payment of $${amount.toFixed(2)} was received successfully.`,
           });
         }}
         onError={(err) => {

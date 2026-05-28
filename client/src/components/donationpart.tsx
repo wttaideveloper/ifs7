@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import PayPalDonateButton from "@/components/PayPalDonateButton";
 import topazImg from "@assets/j.png";
@@ -86,8 +86,24 @@ export default function donationpart() {
   const [selectedType, setSelectedType] = useState("donate");
   const [selectedPlan, setSelectedPlan] = useState("sapphire");
   const [amount, setAmount] = useState("50");
+  const paypalSectionRef = useRef<HTMLDivElement>(null);
 
-  const donationAmount = Number(amount) || 0;
+  const paymentAmount = Number(amount) || 0;
+  const activePlan = plans.find((p) => p.id === selectedPlan);
+
+  const selectPlan = (planId: string) => {
+    const plan = plans.find((p) => p.id === planId);
+    if (!plan) return;
+    setSelectedPlan(planId);
+    setAmount(String(plan.price));
+    paypalSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const openInvest = () => {
+    setSelectedType("invest");
+    const plan = plans.find((p) => p.id === selectedPlan) ?? plans[1];
+    setAmount(String(plan.price));
+  };
 
   return (
     <div className="min-h-screen bg-[#F9F5FF] p-6 md:p-10">
@@ -112,7 +128,7 @@ export default function donationpart() {
 
 {/* INVEST */}
 <button
-  onClick={() => setSelectedType("invest")}
+  onClick={openInvest}
   className="w-full md:w-[600px] h-[180px] md:h-[240px] rounded-3xl bg-white p-[20px] shadow-lg transition"
 >
   <div
@@ -156,7 +172,7 @@ export default function donationpart() {
             </p>
 
             <div className="w-full min-h-[48px]">
-              <PayPalDonateButton amount={donationAmount} />
+              <PayPalDonateButton amount={paymentAmount} paymentKey={`donate-${amount}`} />
             </div>
 
             <div className="mt-8 text-yellow-600 italic">
@@ -169,6 +185,7 @@ export default function donationpart() {
 
       {/* INVESTMENT PLANS */}
       {selectedType === "invest" && (
+        <>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {plans.map((plan) => {
             const selected = selectedPlan === plan.id;
@@ -177,7 +194,7 @@ export default function donationpart() {
               <motion.div
                 key={plan.id}
                 whileHover={{ scale: 1.05 }}
-                onClick={() => setSelectedPlan(plan.id)}
+                onClick={() => selectPlan(plan.id)}
                 className={`rounded-2xl p-6 shadow-lg cursor-pointer transition border
                 ${
                   selected
@@ -214,6 +231,11 @@ export default function donationpart() {
                 </ul>
 
                 <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    selectPlan(plan.id);
+                  }}
                   className={`w-full p-2 rounded-lg font-semibold transition
                   ${
                     selected
@@ -227,6 +249,53 @@ export default function donationpart() {
             );
           })}
         </div>
+
+        <div
+          ref={paypalSectionRef}
+          className="flex justify-center mt-10 px-4"
+        >
+          <div className="bg-white w-full max-w-md p-8 md:p-10 rounded-3xl shadow-2xl text-center">
+            <h2 className="text-2xl font-semibold mb-2">
+              {activePlan ? `${activePlan.name} Plan` : "Investment"} checkout
+            </h2>
+            <p className="text-gray-500 mb-6">
+              Amount updates when you select a plan. Pay with PayPal below.
+            </p>
+
+            <div className="relative mb-3">
+              <span className="absolute left-5 top-1/2 -translate-y-1/2 text-2xl text-gray-500 font-medium">
+                $
+              </span>
+              <input
+                type="number"
+                min="1"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 text-2xl font-semibold text-center border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+
+            <p className="text-gray-500 mb-6">
+              {activePlan
+                ? `${activePlan.shares} · $${activePlan.price.toLocaleString()}/mo`
+                : "Select a plan above"}
+            </p>
+
+            <div className="w-full min-h-[48px]">
+              <PayPalDonateButton
+                amount={paymentAmount}
+                paymentKey={`invest-${selectedPlan}-${amount}`}
+                successTitle="Thank you for your investment!"
+                successDescription={
+                  activePlan
+                    ? `Your ${activePlan.name} plan payment of $${paymentAmount.toLocaleString()} was received.`
+                    : undefined
+                }
+              />
+            </div>
+          </div>
+        </div>
+        </>
       )}
     </div>
   );
